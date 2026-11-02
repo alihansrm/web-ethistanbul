@@ -1,0 +1,1080 @@
+:root {
+  --animate-delay: 0.12s !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: rgba(225, 225, 225, 1);
+}
+
+[id] {
+  scroll-margin-top: 8rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #bf73ed;
+  outline-offset: 4px;
+}
+
+.skipLink {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  transform: translateY(-200%);
+  z-index: 100002;
+  padding: 1rem 2rem;
+  background: white;
+  color: #4b0073;
+  font-size: 1.6rem;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+#wrapper {
+  border: 10px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 96%;
+  margin: 3rem auto;
+  max-width: 140rem;
+  box-shadow: 1.2rem 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================================
+   TYPOGRAPHY
+   =========================================================== */
+h1 {
+  font-size: 8.5rem;
+  margin: 0;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 2.4rem 1.2rem 0 1.2rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 1.2rem 1.2rem 0 1.2rem;
+  color: rgba(117, 19, 163, 0.8);
+}
+
+ul {
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  align-self: center;
+}
+
+li {
+  display: inline;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 1.2rem;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+.myCard p {
+  padding-left: 1.2rem;
+  padding-right: 1rem;
+}
+
+.pBold {
+  font-weight: 700;
+}
+
+/* ===========================================================
+   LAYOUT
+   =========================================================== */
+header {
+  width: 100%;
+  background-image: url('img/istanbul-background.99d6ad2a.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 78rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.25) 55%,
+    rgba(0,0,0,0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.heroColumn {
+  position: relative;
+  z-index: 1;
+}
+
+.heroColumn:nth-child(1) {
+  margin: auto;
+}
+
+.heroTextBox {
+  margin-left: 10rem;
+  max-width: 56rem;
+}
+
+.heroTextBox .dateText {
+  max-width: 52ch;
+}
+
+.heroAnim {
+  will-change: transform, opacity;
+}
+
+.cardLayout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 96%;
+  margin: 2rem auto;
+}
+
+.myCard {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.4rem;
+}
+
+.myCard img {
+  width: 100%;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.cardBar {
+  width: 100%;
+  height: 8rem;
+  background-color: rgba(117, 19, 163, 0.8);
+  display: flex;
+  margin-top: auto;
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+
+/* ===========================================================
+   NAV + LINKS + BUTTONS
+   =========================================================== */
+nav {
+  background-color: rgba(117, 19, 163, 0.9);
+  min-height: 4.2rem;
+  padding: 0.8rem;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 9999;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav li {
+  padding: 0;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  padding: 0.6rem 0.4rem;
+  border-radius: 0.6rem;
+  transition: all 0.25s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+#btnFlex {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+/* Hero text styles */
+.dateText {
+  text-align: left;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.dateText a {
+  text-decoration: none;
+  color: rgba(210, 160, 255, 1);
+  border-bottom: 1px solid rgba(210, 160, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.dateText a:hover {
+  color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(255, 255, 255, 0.7);
+}
+
+.heroButton {
+  transition: all ease 0.25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.2rem;
+  border-radius: 999px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(6px);
+}
+
+.heroButtonPrimary {
+  background: linear-gradient(135deg, rgba(159, 40, 165, 0.95) 0%, rgba(117, 19, 163, 0.95) 100%);
+  color: #fff;
+  box-shadow: 0.9rem 0.9rem 2rem rgba(0, 0, 0, 0.25);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.heroButtonSecondary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(40, 0, 60, 0.92);
+  box-shadow: 0.6rem 0.6rem 1.6rem rgba(0, 0, 0, 0.18);
+}
+
+.heroButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 1.2rem 1.2rem 2.6rem rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+}
+
+.heroHint {
+  color: rgba(255,255,255,0.85);
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+}
+
+/* Card button */
+.cardButton {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1.8rem 2.5rem;
+  border-radius: 0.4rem;
+  box-shadow: -0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  margin: auto;
+  transition: all ease 0.4s;
+}
+
+.cardButton:hover {
+  color: rgba(0, 0, 0, 1);
+  box-shadow: -0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================================
+   MODAL
+   =========================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  padding: 3rem 1.5rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 99999;
+}
+
+.modal:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modalContent {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  margin: 10% auto;
+  padding: 3rem;
+  border-radius: 0.6rem;
+  position: relative;
+  box-shadow: 1.2rem 1.2rem 2.4rem rgba(0, 0, 0, 0.25);
+  z-index: 100000;
+}
+
+.closeButton {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  z-index: 100001;
+}
+
+.closeButton:hover {
+  background: #ff2d2d;
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.22);
+}
+
+.modalContent input {
+  display: block;
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.12);
+  width: 95%;
+  margin: 1.5rem auto;
+  font-family: 'Poppins', sans-serif;
+  height: 4.4rem;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 0.6rem;
+}
+
+.modalContent label {
+  display: block;
+  margin: 1.5rem 0 0 0.7rem;
+  font-size: 1.4rem;
+}
+
+.modalContent input:disabled {
+  color: #595959;
+  opacity: 1;
+}
+
+.btn {
+  border: 0;
+  font-family: inherit;
+  display: block;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(159, 40, 165, 0.75);
+  font-weight: 700;
+  padding: 1.8rem 2.5rem;
+  margin-top: 2rem;
+  width: fit-content;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: all ease 0.4s;
+  box-shadow: -0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+  background: #6b5871;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: rgba(117, 19, 163, 0.9);
+  box-shadow: -0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================================
+   SCHEDULE
+   =========================================================== */
+.timeTable {
+  width: 96%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 2rem auto;
+}
+
+.dayBar {
+  background: linear-gradient(45deg, rgba(165, 40, 121, 0.45) 0%, rgba(146, 40, 165, 0.3));
+  height: 8rem;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dayTitle {
+  color: rgba(255, 255, 255, 1);
+  padding: 0 0 1.4rem 1.6rem;
+}
+
+.dayLine {
+  height: 0.8rem;
+  width: 60%;
+  background-color: rgba(165, 40, 119, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .timeTable {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .timeTable .day:first-child {
+    display: none;
+  }
+}
+
+@media (max-width: 695px) {
+  .timeTable {
+    grid-template-columns: 1fr;
+    width: 88%;
+  }
+  .timeTable .day:first-child {
+    display: none;
+  }
+  .dayLine {
+    width: 100%;
+  }
+}
+
+/* ===========================================================
+   CONTACT & FOOTER
+   =========================================================== */
+.inlineLink {
+  color: rgba(117, 19, 163, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(117, 19, 163, 0.25);
+  padding-bottom: 0.1rem;
+  transition: all 0.3s ease;
+}
+
+.inlineLink:hover {
+  color: rgba(75, 0, 115, 1);
+  border-bottom-color: rgba(75, 0, 115, 0.6);
+}
+
+.myDivider {
+  height: 3rem;
+}
+
+.contactSection {
+  width: 96%;
+  margin: 2rem auto 4rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.contactComponent:nth-child(1) img {
+  width: 100%;
+  border-radius: 0.4rem;
+  box-shadow: 0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.myButton {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: rgba(117, 19, 163, 0.85);
+  font-weight: 600;
+  padding: 1.2rem 2rem;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  box-shadow: -0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.myButton:hover {
+  background-color: rgba(117, 19, 163, 1);
+  box-shadow: -0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.25);
+}
+
+.locationButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin-top: 1.6rem;
+  padding: 1.2rem 2rem;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  border-radius: 999px;
+  border: 1px solid rgba(117, 19, 163, 0.28);
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(40, 0, 60, 0.92);
+
+  transition: all 0.25s ease;
+  box-shadow: -0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.12);
+}
+
+.locationButton:hover {
+  transform: translateY(-2px);
+  box-shadow: -0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.16);
+}
+
+.locationIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+
+  background: rgba(117, 19, 163, 0.12);
+}
+
+.locationIcon svg {
+  display: block;
+  fill: rgba(117, 19, 163, 0.9);
+}
+
+/* small info section */
+.simpleInfo {
+  width: 96%;
+  max-width: 90rem;
+  margin: 0 auto 2rem auto;
+  background: rgba(255,255,255,0.9);
+  border-radius: 0.6rem;
+  padding: 1.6rem 2rem;
+  box-shadow: 0.6rem 0.6rem 1.4rem rgba(0,0,0,0.12);
+}
+
+footer {
+  background: linear-gradient(135deg, rgba(117, 19, 163, 0.95) 0%, rgba(60, 0, 95, 0.95) 100%);
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.footerColumn {
+  padding: 4rem 3rem;
+}
+
+footer h3,
+footer h4 {
+  color: #fff;
+  margin: 0;
+}
+
+footer h3 {
+  font-size: 2.2rem;
+}
+
+footer h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.footerLine {
+  height: 0.2rem;
+  width: 5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 1.2rem 0 1.6rem 0;
+}
+
+footer a {
+  display: block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+footer img {
+  width: 70%;
+  max-width: 18rem;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  padding: 0.8rem;
+  box-shadow: 0.8rem 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
+}
+
+.footerNote {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+@media (max-width: 1024px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+
+  .heroColumn:nth-child(2) {
+    display: none;
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .cardLayout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contactSection {
+    grid-template-columns: 1.5fr 1.5fr;
+  }
+
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heroTextBox {
+    margin-left: 6rem;
+  }
+}
+
+@media (max-width: 695px) {
+  header {
+    grid-template-columns: 1fr;
+    min-height: 62rem;
+  }
+
+  .cardLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .heroTextBox {
+    margin-left: 5vw;
+    width: 88%;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  .modalContent {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 11vw;
+  }
+
+  .dateText {
+    font-size: 3.6vw;
+  }
+
+  #btnFlex {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .heroButton {
+    width: auto;
+    font-size: 1.3rem;
+  }
+
+  .contactSection {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footerColumn {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===========================================================
+   ETHISTANBUL BREAK SECTION
+   =========================================================== */
+
+.ethBreakSection {
+  position: relative;
+  width: 100%;
+  min-height: 72rem;
+
+  background-image: url('img/istanbul_bridge.b916d4f7.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  overflow: hidden;
+}
+
+.ethBreakOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  z-index: 1;
+}
+
+.ethBreakContent {
+  position: relative;
+  z-index: 2;
+
+  max-width: 48rem;
+  margin-right: 8rem;
+
+  color: #fff;
+}
+
+.ethBreakContent h3 {
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  padding: 0;
+  margin-bottom: 2.4rem;
+  color: #fff;
+}
+
+.ethAccent {
+  color: rgba(210, 160, 255, 1);
+  font-weight: 800;
+}
+
+.ethBreakButton {
+  background: linear-gradient(
+    135deg,
+    rgba(159, 40, 165, 0.95),
+    rgba(117, 19, 163, 0.95)
+  );
+  box-shadow: 0.8rem 0.8rem 2rem rgba(0, 0, 0, 0.35);
+}
+
+.ethBreakButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 1.2rem 1.2rem 2.6rem rgba(0, 0, 0, 0.45);
+}
+
+/* ===========================================================
+   ITS RESPONSIVE
+   =========================================================== */
+
+@media (max-width: 1024px) {
+  .ethBreakSection {
+    min-height: 56rem;
+  }
+
+  .ethBreakContent {
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 695px) {
+  .ethBreakSection {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ethBreakContent {
+    margin: 0 2rem;
+  }
+
+  .ethBreakContent h3 {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+}
+
+/* ===========================================================
+   MERCH SECTION
+   =========================================================== */
+
+.merchSection {
+  width: 96%;
+  margin: 0 auto 4rem auto;
+  max-width: 120rem;
+}
+
+.merchIntro {
+  text-align: center;
+  margin: 0.8rem auto 2.2rem auto;
+  max-width: 70ch;
+  color: rgba(0,0,0,0.75);
+}
+
+/* Grid */
+.merchGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.merchCard {
+  background: rgba(255,255,255,1);
+  border-radius: 0.6rem;
+  box-shadow: 0.8rem 0.8rem 1.6rem rgba(0,0,0,0.14);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.merchCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 1.2rem 1.2rem 2.4rem rgba(0,0,0,0.18);
+}
+
+/* image area without images */
+.merchImg {
+  height: 18rem;
+  background: linear-gradient(
+    135deg,
+    rgba(117, 19, 163, 0.22) 0%,
+    rgba(0, 0, 0, 0.06) 60%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  position: relative;
+}
+
+.merchImg::after {
+  content: "";
+  position: absolute;
+  inset: 1.4rem;
+  border-radius: 0.5rem;
+  border: 1px dashed rgba(117, 19, 163, 0.35);
+}
+
+/* Label text inside the placeholder image */
+.merchImg::before {
+  content: "ETHISTANBUL";
+  position: absolute;
+  left: 1.8rem;
+  bottom: 1.6rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.18rem;
+  color: rgba(40,0,60,0.65);
+  background: rgba(255,255,255,0.72);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+}
+
+/* Small variants */
+.merchImgTee::before { content: "TEE"; }
+.merchImgHoodie::before { content: "HOODIE"; }
+.merchImgCap::before { content: "CAP"; }
+.merchImgStickers::before { content: "STICKERS"; }
+
+/* Body */
+.merchBody {
+  padding: 1.6rem 1.6rem 2rem 1.6rem;
+}
+
+.merchTitle {
+  font-size: 1.8rem;
+  padding: 0;
+  margin: 0;
+  color: rgba(0,0,0,0.86);
+}
+
+.merchMeta {
+  margin: 0.6rem 0 0.8rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgba(117, 19, 163, 0.78);
+}
+
+.merchDesc {
+  margin: 0 0 1.4rem 0;
+  color: rgba(0,0,0,0.72);
+}
+
+/* Buttons inside merch cards */
+.merchActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.merchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.0rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(117, 19, 163, 0.25);
+}
+
+.merchBtnPrimary {
+  background: rgba(117, 19, 163, 0.92);
+  color: #fff;
+}
+
+.merchBtnPrimary:hover {
+  background: rgba(117, 19, 163, 1);
+  transform: translateY(-1px);
+}
+
+.merchBtnGhost {
+  background: rgba(255,255,255,0.9);
+  color: rgba(40,0,60,0.9);
+}
+
+.merchBtnGhost:hover {
+  transform: translateY(-1px);
+  box-shadow: -0.4rem 0.4rem 0.8rem rgba(0,0,0,0.12);
+}
+
+/* Banner */
+.merchBanner {
+  margin-top: 2.4rem;
+  padding: 2.2rem 2.4rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(117, 19, 163, 0.12) 0%,
+    rgba(0, 0, 0, 0.04) 60%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  border: 1px solid rgba(117, 19, 163, 0.18);
+}
+
+.merchBannerText h3 {
+  padding: 0;
+  margin: 0 0 0.6rem 0;
+  font-size: 2rem;
+}
+
+.merchBannerText p {
+  margin: 0;
+  color: rgba(0,0,0,0.72);
+}
+
+.merchBannerBtn {
+  margin-top: 0;
+}
+
+/* Real merch images */
+.merchImgReal {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .merchGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .merchBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 695px) {
+  .merchGrid {
+    grid-template-columns: 1fr;
+  }
+}
