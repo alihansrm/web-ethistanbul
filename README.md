@@ -4,6 +4,8 @@ A responsive conference landing page built with HTML and CSS as a learning and p
 
 > Unofficial educational project inspired by ETHIstanbul. This is not the official event website, ticket service, or merchandise store. Event details represent the original project content, not current event information.
 
+![ETHIstanbul desktop landing page with the Istanbul skyline](docs/screenshots/desktop-hero.jpg)
+
 ## Features
 
 - Responsive layouts using CSS Grid, Flexbox, and media queries
@@ -26,6 +28,28 @@ No JavaScript, package installation, or build step is required. Google Fonts and
 
 Open `index.html` directly in a browser, or use a static server such as the VS Code Live Server extension and choose **Open with Live Server** on `index.html`.
 
+## Screenshots
+
+### Guest speakers
+
+![Four speaker cards with portraits and talk titles](docs/screenshots/speakers.jpg)
+
+### Conference schedule
+
+![Three-day schedule with session times and titles](docs/screenshots/schedule.jpg)
+
+### Merchandise previews
+
+![T-shirt, hoodie, cap, and sticker pack previews](docs/screenshots/merchandise.jpg)
+
+### Venue and contact
+
+![Rami Library photograph and the event contact panel](docs/screenshots/venue.jpg)
+
+### Mobile layout
+
+<img src="docs/screenshots/mobile-hero.jpg" alt="ETHIstanbul landing page on a narrow mobile screen" width="390">
+
 ## Project structure
 
 ```text
@@ -33,6 +57,7 @@ web-ethistanbul/
 ├── index.html       # Page structure and content
 ├── style.css        # Layout, components, and responsive styles
 ├── img/             # Speaker, venue, background, and merchandise images
+├── docs/screenshots/ # Desktop and mobile screenshots
 ├── .editorconfig    # Shared formatting preferences
 ├── .gitattributes   # Text file normalization
 └── .gitignore       # Local files excluded from version control
